@@ -11,10 +11,17 @@
 {% endblock %}
 
 {% block content %}
+    <div class="float-container">
     {% for i in image %}
-        <div class="text-center mt-2">
-            <a href="{{ i.image.url }}"><img src="{{ i.image.url }}" alt="image" height="400" width="600" class="btn"></a>
-            <h4 class="text-center">{{ i.title }}</h4>
+        <div class="float-child text-center " >
+            <div class="bg-grad ce">
+            <p style="font-size: 30px">{{ i.title }}</p>
+            <p style="font-style: oblique">Created: {{ i.captured_date|date:"M d, Y" }}</p>
+            <a href="{{ i.image.url }}"><img src="{{ i.image.url }}" alt="image" height="250" width="350" class="btn center"></a>
+            <h4><a class="btn btn-prime" href="">Edit</a><a class="btn btn-prime" href="">Delete</a><a class="btn btn-prime" href="">Share</a></h4>
+            </div>
         </div>
     {% endfor %}
+    </div>
 {% endblock %}
+{#text-center mt-2#}

@@ -2,10 +2,13 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from main.forms import PhotoForm
 from django.contrib.auth.models import User
+from main.models import Photo
 
 @login_required
 def gallery(request):
-    return render(request, "main/gallery.html", {'username': request.user.username})
+    user = request.user
+    image = user.photo_set.all()
+    return render(request, "main/gallery.html", {'username': request.user.username, 'image': image})
 
 @login_required
 def upload(request):

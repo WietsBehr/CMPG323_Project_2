@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+{% block welcomeText %}
+    <h3 class="text-center">Welcome, {{ username }}!</h3>
+{% endblock %}
+{% block regBtn %}
+{% endblock %}
+
+{% block btnToRight %}
+    <a class="btn btn-light" href='{% url 'logout' %}'>Log out</a>
+{% endblock %}
+
+{% block content %}
+
+    <a class="btn btn-light" href='{% url 'upload' %}'>Upload</a>
+    {% for i in images %}
+        <img src="{{ i.main.url }}" alt="" height="40px" width="40px">
+    {% endfor %}
+{% endblock %}

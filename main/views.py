@@ -5,10 +5,10 @@ from django.contrib.auth.models import User
 from main.models import Photo
 
 @login_required
-def gallery(request):
+def gallery(request, *args, **kwargs):
     user = request.user
     image = user.photo_set.all()
-    return render(request, "main/gallery.html", {'username': request.user.username, 'image': image})
+    return render(request, "main/gallery.html", {'username': request.user.username, 'image': image},*args, **kwargs)
 
 @login_required
 def upload(request):

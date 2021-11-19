@@ -13,12 +13,12 @@ def gallery(request):
     return render(request, "main/gallery.html", {'username': request.user.username, 'image': image})
 
 @login_required
-def upload(request):
+def upload(request, *args, **kwargs):
     if request.method == 'POST':
         form = PhotoForm(request.POST, request.FILES)
         if form.is_valid():
             form.instance.user = request.user
-            form.save()
+            form.save(*args, **kwargs)
             return redirect('gallery')
     else:
         form = PhotoForm()

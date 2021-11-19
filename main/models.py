@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
+from django.urls import reverse
 from PIL import Image
 
 class Photo(models.Model):
@@ -15,4 +16,7 @@ class Photo(models.Model):
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
+
+
+
 

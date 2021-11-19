@@ -20,6 +20,7 @@ from users import views as user_views
 from main import views as main_views
 from django.conf import settings
 from django.conf.urls.static import static
+from main.views import Edit, ImageDelete
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,6 +29,9 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
     path('gallery/',  main_views.gallery, name='gallery'),
     path('upload/', main_views.upload, name='upload'),
+    path('edit/<int:pk>/', Edit.as_view(), name='edit'),
+    path('delete/<int:pk>/', ImageDelete.as_view(), name='delete'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

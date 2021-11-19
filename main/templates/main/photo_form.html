@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block btnToRight %}
-{#    <a class="btn btn-light" href='/gallery/'>Cancel</a>#}
+    <a class="btn btn-light" href='/gallery/'>Cancel</a>
 {% endblock %}
 
 {% block content %}
@@ -13,12 +13,9 @@
             <div class="col col-10 col-lg-4  rounded-3 bg-grad text-dark p-1 p-md-4 shadow-lg">
                 <form class="row gy-3" method="post" action="" enctype="multipart/form-data">
                     {% csrf_token %}
-    {#                    {% block error_banner %}#}
-    {#                    {% endblock %}#}
+                        {{ object.title }}
                         {{ form|crispy }}
-
-
-                    <button class="w-100 btn mb-3 btn-lg btn-primary" type="submit">Upload</button>
+                    <button class="w-100 btn mb-3 btn-lg btn-primary" type="submit">Save</button>
                 </form>
             </div>
         </div>

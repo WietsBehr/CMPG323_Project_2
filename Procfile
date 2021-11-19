@@ -1,1 +1,1 @@
-web: gunicorn CMPG323_Project_2.wsgi.py
+web: gunicorn CMPG323_Project_2.wsgi.application

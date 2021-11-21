@@ -15,7 +15,30 @@
                 </form>
                 <div class="border-top pt-3">
                     <small class="text-muted">
-                        Already have an account? <a class="ml-2" href="{% url 'login' %}">Sign In</a>
+                        Already have an account? <a class="ml-2" href="{% url 'login' %}">Sign In</a> <br/>
+                        <!-- Button trigger modal -->
+                            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                              Terms and conditions.
+                            </a>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Terms and Conditions</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                  </div>
+                                  <div class="modal-body">
+                                      This website uses encrypted passwords, so even the developer won't be able to see your password.
+                                      Please note that photos that contain any form of pornographic content or offensive content will be removed immediately and your account may be banned.
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                     </small>
                 </div>
             </div>

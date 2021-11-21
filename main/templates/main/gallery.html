@@ -20,8 +20,8 @@
                 <p class="mb-0" style="font-size: 30px">{{ i.title }}</p>
                     <p class="mb-0 mt-1" style="font-size: 15px">Location: {{ i.location }}</p>
                 <p class="mb-0 mt-1" style="font-style: oblique">Created: {{ i.captured_date|date:"M d, Y" }}</p>
-                <a href="{{ i.image.url }}"><img src="{{ i.image.url }}" alt="image" height="250" width="350" class="btn center"></a>
-                <h4><a class="btn btn-prime mb-0 mt-0" href={% url 'edit' i.id %}>EDIT</a><a class="btn btn-prime" href="">SHARE</a><a class="btn btn-prime" href="{% url 'delete' i.id %}">DELETE</a></h4>
+                <a href="{{ i.image.url }}" download><img src="{{ i.image.url }}" alt="image" height="250" width="350" class="btn center"></a>
+                <h4><a class="btn btn-prime mb-0 mt-0" href={% url 'edit' i.id %}>EDIT</a><a class="btn btn-prime" href="{{ i.image.url }}" download>SHARE</a><a class="btn btn-prime" href="{% url 'delete' i.id %}">DELETE</a></h4>
                 </div>
             </div>
         {% endfor %}
